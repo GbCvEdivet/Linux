@@ -1,0 +1,281 @@
+student@Ubuntu-MySQL-VirtualBox:~$ tail /etc/passwd
+hplip:x:115:7:HPLIP system user,,,:/var/run/hplip:/bin/false
+kernoops:x:116:65534:Kernel Oops Tracking Daemon,,,:/:/bin/false
+pulse:x:117:124:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+rtkit:x:118:126:RealtimeKit,,,:/proc:/bin/false
+saned:x:119:127::/var/lib/saned:/bin/false
+usbmux:x:120:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+student:x:1000:1000:student,,,:/home/student:/bin/bash
+vboxadd:x:999:1::/var/run/vboxadd:/bin/false
+mysql:x:121:129:MySQL Server,,,:/nonexistent:/bin/false
+sshd:x:122:65534::/var/run/sshd:/usr/sbin/nologin
+student@Ubuntu-MySQL-VirtualBox:~$ sudo adduser new_user
+[sudo] пароль для student: 
+Добавляется пользователь «new_user» ...
+Добавляется новая группа «new_user» (1001) ...
+Добавляется новый пользователь «new_user» (1001) в группу «new_user» ...
+Создаётся домашний каталог «/home/new_user» ...
+Копирование файлов из «/etc/skel» ...
+Введите новый пароль UNIX: 
+Повторите ввод нового пароля UNIX: 
+passwd: пароль успешно обновлён
+Изменение информации о пользователе new_user
+Введите новое значение или нажмите ENTER для выбора значения по умолчанию
+	Полное имя []: 
+	Номер комнаты []: 
+	Рабочий телефон []: 
+	Домашний телефон []: 
+	Другое []: 
+Данная информация корректна? [Y/n] y
+student@Ubuntu-MySQL-VirtualBox:~$ tail /etc/passwd
+kernoops:x:116:65534:Kernel Oops Tracking Daemon,,,:/:/bin/false
+pulse:x:117:124:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+rtkit:x:118:126:RealtimeKit,,,:/proc:/bin/false
+saned:x:119:127::/var/lib/saned:/bin/false
+usbmux:x:120:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+student:x:1000:1000:student,,,:/home/student:/bin/bash
+vboxadd:x:999:1::/var/run/vboxadd:/bin/false
+mysql:x:121:129:MySQL Server,,,:/nonexistent:/bin/false
+sshd:x:122:65534::/var/run/sshd:/usr/sbin/nologin
+new_user:x:1001:1001:,,,:/home/new_user:/bin/bash
+student@Ubuntu-MySQL-VirtualBox:~$ tail /etc/group
+colord:x:123:
+pulse:x:124:
+pulse-access:x:125:
+rtkit:x:126:
+saned:x:127:
+student:x:1000:
+sambashare:x:128:student
+vboxsf:x:999:
+mysql:x:129:
+new_user:x:1001:
+student@Ubuntu-MySQL-VirtualBox:~$ su new_user
+Пароль: 
+new_user@Ubuntu-MySQL-VirtualBox:/home/student$ whoami
+new_user
+new_user@Ubuntu-MySQL-VirtualBox:/home/student$ exit
+exit
+student@Ubuntu-MySQL-VirtualBox:~$ userdel --help
+Использование: userdel [параметры] ПОЛЬЗОВАТЕЛЬ
+
+Параметры:
+  -f, --force                   удалять файлы, даже если они
+                                не принадлежат пользователю
+  -h, --help                    показать данное сообщение и закончить работу
+  -r, --remove                  удалить домашний каталог и почтовый ящик
+  -R, --root КАТ_CHROOT         каталог, в который выполняется chroot
+      --extrausers              Use the extra users database
+  -Z, --selinux-user            удалить все пользовательские сопоставления
+                                SELinux для пользователя
+
+student@Ubuntu-MySQL-VirtualBox:~$ userdel -fr new_user
+userdel: Permission denied.
+userdel: не удалось заблокировать /etc/passwd; попробуйте ещё раз позже.
+student@Ubuntu-MySQL-VirtualBox:~$ sudo userdel -fr new_user
+userdel: почтовый ящик new_user (/var/mail/new_user) не найден
+student@Ubuntu-MySQL-VirtualBox:~$ tail /etc/group
+scanner:x:122:saned
+colord:x:123:
+pulse:x:124:
+pulse-access:x:125:
+rtkit:x:126:
+saned:x:127:
+student:x:1000:
+sambashare:x:128:student
+vboxsf:x:999:
+mysql:x:129:
+student@Ubuntu-MySQL-VirtualBox:~$ tail /etc/passwd
+hplip:x:115:7:HPLIP system user,,,:/var/run/hplip:/bin/false
+kernoops:x:116:65534:Kernel Oops Tracking Daemon,,,:/:/bin/false
+pulse:x:117:124:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+rtkit:x:118:126:RealtimeKit,,,:/proc:/bin/false
+saned:x:119:127::/var/lib/saned:/bin/false
+usbmux:x:120:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+student:x:1000:1000:student,,,:/home/student:/bin/bash
+vboxadd:x:999:1::/var/run/vboxadd:/bin/false
+mysql:x:121:129:MySQL Server,,,:/nonexistent:/bin/false
+sshd:x:122:65534::/var/run/sshd:/usr/sbin/nologin
+student@Ubuntu-MySQL-VirtualBox:~$ 
+student@Ubuntu-MySQL-VirtualBox:~$ groupadd --help
+Использование: groupadd [параметры] ГРУППА
+
+Параметры:
+  -f, --force                   закончить работу без ошибки, если группа
+                                существует и отменить -g, если GID уже
+                                используется
+  -g, --gid GID                 для новой группы использовать указанный GID
+  -h, --help                    показать данное сообщение и закончить работу
+  -K, --key КЛЮЧ=ЗНАЧЕНИЕ       заменить значение по умолчанию
+                                из /etc/login.defs
+  -o, --non-unique              разрешить создание групп с повторяющимся
+                                (не уникальным) GID
+  -p, --password ПАРОЛЬ         использовать этот шифрованный пароль для
+                                новой группы
+  -r, --system                  создать системную учётную запись
+  -R, --root КАТ_CHROOT         каталог, в который выполняется chroot
+      --extrausers              Use the extra users database
+
+student@Ubuntu-MySQL-VirtualBox:~$ sudo groupadd new_group
+student@Ubuntu-MySQL-VirtualBox:~$ tail /etc/group
+colord:x:123:
+pulse:x:124:
+pulse-access:x:125:
+rtkit:x:126:
+saned:x:127:
+student:x:1000:
+sambashare:x:128:student
+vboxsf:x:999:
+mysql:x:129:
+new_group:x:1001:
+student@Ubuntu-MySQL-VirtualBox:~$ usermod --help
+Использование: usermod [параметры] ПОЛЬЗОВАТЕЛЬ
+
+Параметры:
+  -c, --comment КОММЕНТАРИЙ     новое значение поля GECOS
+  -d, --home ДОМ_КАТ            новый домашний каталог учётной записи
+  -e, --expiredate ДАТА_УСТ     установить дату окончания действия
+                                учётной записи в ДАТА_УСТ
+  -f, --inactive НЕАКТИВНОСТЬ   установить период неактивности пароля после
+                                устаревания учётной записи равным НЕАКТИВНОСТЬ
+  -g, --gid ГРУППА              принудительно назначить первичную ГРУППУ
+  -G, --groups ГРУППЫ           список дополнительных ГРУПП
+  -a, --append                  добавить пользователя в дополнительные
+                                ГРУППЫ, указанные в параметре -G не удаляя
+                                пользователя из других групп
+  -h, --help                    показать данное сообщение и закончить работу
+  -l, --login НОВОЕ_ИМЯ         новое значение имени учётной записи
+  -L, --lock                    заблокировать учётную запись
+  -m, --move-home               переместить содержимое домашнего каталога в
+                                новое место (использовать только вместе с -d)
+  -o, --non-unique              разрешить создание учётной записи с уже
+                                имеющимся (не уникальным) UID
+  -p, --password ПАРОЛЬ         задать новый шифрованный пароль для
+                                учётной записи
+  -R, --root КАТ_CHROOT         каталог, в который выполняется chroot
+  -s, --shell ОБОЛОЧКА          новая регистрационная оболочка для учётной
+                                записи
+  -u, --uid UID                 новый UID для учётной записи
+  -U, --unlock                  разблокировать учётную запись
+  -v, --add-subuids FIRST-LAST  add range of subordinate uids
+  -V, --del-subuids FIRST-LAST  remove range of subordinate uids
+  -w, --add-subgids FIRST-LAST  add range of subordinate gids
+  -W, --del-subgids FIRST-LAST  remove range of subordinate gids
+  -Z, --selinux-user SEUSER     новое пользовательское сопоставление
+                                SELinux для учётной записи
+
+student@Ubuntu-MySQL-VirtualBox:~$ sudo usermod -aG new_group student
+student@Ubuntu-MySQL-VirtualBox:~$ groups
+student adm cdrom sudo dip plugdev lpadmin sambashare
+student@Ubuntu-MySQL-VirtualBox:~$ groups student
+student : student adm cdrom sudo dip plugdev lpadmin sambashare new_group
+student@Ubuntu-MySQL-VirtualBox:~$ sudo deluser student new_group
+[sudo] пароль для student: 
+Удаляется пользователь «student» из группы «new_group» ...
+Готово.
+student@Ubuntu-MySQL-VirtualBox:~$ groups student
+student : student adm cdrom sudo dip plugdev lpadmin sambashare
+student@Ubuntu-MySQL-VirtualBox:~$ 
+student@Ubuntu-MySQL-VirtualBox:~$ 
+student@Ubuntu-MySQL-VirtualBox:~$ sudo useradd -m -s /bin/bash user666
+student@Ubuntu-MySQL-VirtualBox:~$ tail /etc/passwd
+kernoops:x:116:65534:Kernel Oops Tracking Daemon,,,:/:/bin/false
+pulse:x:117:124:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+rtkit:x:118:126:RealtimeKit,,,:/proc:/bin/false
+saned:x:119:127::/var/lib/saned:/bin/false
+usbmux:x:120:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+student:x:1000:1000:student,,,:/home/student:/bin/bash
+vboxadd:x:999:1::/var/run/vboxadd:/bin/false
+mysql:x:121:129:MySQL Server,,,:/nonexistent:/bin/false
+sshd:x:122:65534::/var/run/sshd:/usr/sbin/nologin
+user666:x:1001:1002::/home/user666:/bin/bash
+student@Ubuntu-MySQL-VirtualBox:~$ sudopasswd user666
+sudopasswd: команда не найдена
+student@Ubuntu-MySQL-VirtualBox:~$ sudo passwd user666
+Введите новый пароль UNIX: 
+Повторите ввод нового пароля UNIX: 
+passwd: пароль успешно обновлён
+student@Ubuntu-MySQL-VirtualBox:~$ sudo usermod -G sudo user666
+student@Ubuntu-MySQL-VirtualBox:~$ tail /etc/passwd
+kernoops:x:116:65534:Kernel Oops Tracking Daemon,,,:/:/bin/false
+pulse:x:117:124:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+rtkit:x:118:126:RealtimeKit,,,:/proc:/bin/false
+saned:x:119:127::/var/lib/saned:/bin/false
+usbmux:x:120:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+student:x:1000:1000:student,,,:/home/student:/bin/bash
+vboxadd:x:999:1::/var/run/vboxadd:/bin/false
+mysql:x:121:129:MySQL Server,,,:/nonexistent:/bin/false
+sshd:x:122:65534::/var/run/sshd:/usr/sbin/nologin
+user666:x:1001:1002::/home/user666:/bin/bash
+student@Ubuntu-MySQL-VirtualBox:~$ groups user666
+user666 : user666 sudo
+student@Ubuntu-MySQL-VirtualBox:~$ su user666
+Пароль: 
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+user666@Ubuntu-MySQL-VirtualBox:/home/student$ apt update
+Чтение списков пакетов… Готово
+W: chmod 0700 of directory /var/lib/apt/lists/partial failed - SetupAPTPartialDirectory (1: Операция не позволена)
+E: Не удалось открыть файл блокировки /var/lib/apt/lists/lock - open (13: Отказано в доступе)
+E: Невозможно заблокировать каталог /var/lib/apt/lists/
+W: Проблема при удалении файла /var/cache/apt/pkgcache.bin - RemoveCaches (13: Отказано в доступе)
+W: Проблема при удалении файла /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Отказано в доступе)
+user666@Ubuntu-MySQL-VirtualBox:/home/student$ sudo su
+[sudo] пароль для user666: 
+Попробуйте ещё раз.
+[sudo] пароль для user666: 
+root@Ubuntu-MySQL-VirtualBox:/home/student# apt update
+Сущ:1 http://ppa.launchpad.net/linuxuprising/java/ubuntu xenial InRelease
+Сущ:2 http://ru.archive.ubuntu.com/ubuntu xenial InRelease                  
+Пол:3 http://ru.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB] 
+Сущ:4 http://ppa.launchpad.net/webupd8team/java/ubuntu xenial InRelease     
+Пол:5 http://ru.archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Сущ:6 http://security.ubuntu.com/ubuntu xenial-security InRelease    
+Сущ:7 https://esm.ubuntu.com/infra/ubuntu xenial-infra-security InRelease
+Сущ:8 https://esm.ubuntu.com/infra/ubuntu xenial-infra-updates InRelease
+Сущ:9 https://dbeaver.io/debs/dbeaver-ce  InRelease
+Получено 216 kB за 1с (134 kB/s)
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Может быть обновлён 1 пакет. Запустите «apt list --upgradable» для показа.
+root@Ubuntu-MySQL-VirtualBox:/home/student# apt list --upgradable
+Вывод списка… Готово
+dbeaver-ce/неизвестно 21.3.2 amd64 [может быть обновлён с: 21.3.1]
+N: Есть 1 дополнительная версия. Используйте «-a» для просмотра.
+root@Ubuntu-MySQL-VirtualBox:/home/student# apt upgrade
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Расчёт обновлений… Готово
+
+*The following packages could receive security updates with UA Infra: ESM service enabled:
+  libpam0g libdjvulibre-text bluez libwebp5 libdns-export162 libqpdf21 gstreamer1.0-alsa libisccfg140 intel-microcode linux-libc-dev vim-common libnss3-nssdb libcurl3 mysql-client-5.7 libgrilo-0.2-1 gstreamer1.0-plugins-base-apps libpam-modules openssl bluez-cups imagemagick mysql-server-5.7 ntfs-3g libsystemd0 linux-image-generic-hwe-16.04 libgd3 libavahi-glib1 libicu55 binutils libmagickwand-6.q16-2 squashfs-tools bind9-host linux-generic-hwe-16.04 libavahi-common-data dnsutils libavahi-common3 libpython3.5 python3.5 openssh-sftp-server python3.5-minimal libisc160 udev gstreamer1.0-plugins-base libpam-runtime isc-dhcp-common libx11-6 libudev1 libwebpdemux1 libavahi-ui-gtk3-0 libaspell15 apport mysql-client-core-5.7 imagemagick-6.q16 libmagickcore-6.q16-2-extra libisc-export160 libcaca0 python3-apport avahi-daemon systemd-sysv libavahi-core7 libgcrypt20 liblwres141 libglib2.0-bin liblz4-1 libpam-systemd libgstreamer-plugins-base1.0-0 distro-info-data libsndfile1 gstreamer1.0-x systemd gir1.2-gst-plugins-base-1.0 libwebpmux1 mysql-common libpam-modules-bin openssh-server libx11-data aspell libopenexr22 openssh-client libmagickcore-6.q16-2 libmysqlclient20 avahi-autoipd libdns162 qpdf libglib2.0-data bluez-obexd libdjvulibre21 apport-gtk libxml2 libnss3 ca-certificates vim-tiny imagemagick-common libisccc140 avahi-utils linux-headers-generic-hwe-16.04 libpython3.5-stdlib libbind9-140 libbluetooth3 libexiv2-14 libpython3.5-minimal libavahi-client3 isc-dhcp-client python3-problem-report mysql-server-core-5.7 libglib2.0-0 libcurl3-gnutls libx11-xcb1 libssl1.0.0 tzdata
+Learn more about UA Infra: ESM service for Ubuntu 16.04 at https://ubuntu.com/16-04
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Следующие пакеты будут обновлены:
+  dbeaver-ce
+Обновлено 1 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 0 пакетов не обновлено.
+Необходимо скачать 109 MB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 1 334 kB.
+Хотите продолжить? [Д/н] y
+Пол:1 https://dbeaver.io/debs/dbeaver-ce  dbeaver-ce 21.3.2 [109 MB]
+Получено 109 MB за 25с (4 279 kB/s)                                         
+(Чтение базы данных … на данный момент установлено 222500 файлов и каталогов.)
+Подготовка к распаковке …/dbeaver-ce_21.3.2_amd64.deb …
+Распаковывается dbeaver-ce (21.3.2) на замену (21.3.1) …
+Обрабатываются триггеры для gnome-menus (3.13.3-6ubuntu3.1) …
+Обрабатываются триггеры для desktop-file-utils (0.22-1ubuntu5.2) …
+Обрабатываются триггеры для bamfdaemon (0.5.3~bzr0+16.04.20180209-0ubuntu1) …
+Rebuilding /usr/share/applications/bamf-2.index...
+Обрабатываются триггеры для mime-support (3.59ubuntu1) …
+Настраивается пакет dbeaver-ce (21.3.2) …
+root@Ubuntu-MySQL-VirtualBox:/home/student# exit
+exit
+user666@Ubuntu-MySQL-VirtualBox:/home/student$ exit
+exit
+student@Ubuntu-MySQL-VirtualBox:~$ 
+
