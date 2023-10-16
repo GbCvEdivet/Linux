@@ -1,0 +1,50 @@
+student@Ubuntu-MySQL-VirtualBox:~$ uname
+Linux
+student@Ubuntu-MySQL-VirtualBox:~$ whoami
+student
+student@Ubuntu-MySQL-VirtualBox:~$ pwd
+/home/student
+student@Ubuntu-MySQL-VirtualBox:~$ ls
+examples.desktop  Документы  Изображения  Общедоступные  Шаблоны
+Видео             Загрузки   Музыка       Рабочий стол
+student@Ubuntu-MySQL-VirtualBox:~$ ll
+итого 160
+drwxr-xr-x 23 student student 4096 дек 20 11:19 ./
+drwxr-xr-x  3 root    root    4096 апр 22  2019 ../
+-rw-------  1 student student  955 дек 20 12:18 .bash_history
+-rw-r--r--  1 student student  220 апр 22  2019 .bash_logout
+-rw-r--r--  1 student student 3771 апр 22  2019 .bashrc
+drwx------ 15 student student 4096 апр 22  2019 .cache/
+drwx------ 15 student student 4096 апр 22  2019 .config/
+drwxrwxr-x  4 student student 4096 апр 22  2019 .dbeaver4/
+drwxrwxr-x  3 student student 4096 апр 22  2019 .dbeaver-drivers/
+drwx------  3 student student 4096 дек 20 08:17 .dbus/
+drwxrwxr-x  4 student student 4096 апр 22  2019 .eclipse/
+-rw-r--r--  1 student student 8980 апр 22  2019 examples.desktop
+drwx------  2 student student 4096 апр 22  2019 .gconf/
+drwx------  3 student student 4096 дек 20 11:18 .gnupg/
+-rw-------  1 student student 2702 дек 20 11:19 .ICEauthority
+drwx------  3 student student 4096 апр 22  2019 .local/
+drwx------  5 student student 4096 апр 22  2019 .mozilla/
+drwx------  3 student student 4096 апр 22  2019 .mysql/
+-rw-------  1 student student   92 апр 22  2019 .mysql_history
+drwxrwxr-x  2 student student 4096 апр 22  2019 .nano/
+-rw-r--r--  1 student student  655 апр 22  2019 .profile
+-rw-rw-r--  1 student student   66 апр 22  2019 .selected_editor
+-rw-r--r--  1 student student    0 апр 22  2019 .sudo_as_admin_successful
+drwxrwxr-x  2 student student 4096 апр 22  2019 .swt/
+-rw-r-----  1 student student    5 дек 20 11:18 .vboxclient-clipboard.pid
+-rw-r-----  1 student student    5 дек 20 11:18 .vboxclient-display-svga-x11.pid
+-rw-r-----  1 student student    5 дек 20 11:18 .vboxclient-draganddrop.pid
+-rw-r-----  1 student student    5 дек 20 11:18 .vboxclient-seamless.pid
+-rw-------  1 student student   68 дек 20 11:18 .Xauthority
+-rw-------  1 student student  111 дек 20 11:18 .xsession-errors
+-rw-------  1 student student 1951 дек 20 08:26 .xsession-errors.old
+drwxr-xr-x  2 student student 4096 апр 22  2019 Видео/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Документы/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Загрузки/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Изображения/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Музыка/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Общедоступные/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Рабочий стол/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Шаблоны/
