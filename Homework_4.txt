@@ -1,0 +1,332 @@
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ echo "I'm just a regular everyday normal mthrfckr" > Homework_text.txt
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ tree
+.
+├── Homework_text.txt
+├── pyscr_errors.txt
+├── py_scripts.txt
+└── wc_help.txt
+
+0 directories, 4 files
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ more Homework_text.txt
+I'm just a regular everyday normal mthrfckr
+
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ cat /etc/* 1> etc_1.txt 2> etc_2.txt 
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ tree
+.
+├── etc_1.txt
+├── etc_2.txt
+├── Homework_text.txt
+├── pyscr_errors.txt
+├── py_scripts.txt
+└── wc_help.txt
+
+0 directories, 6 files
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ tail etc_2.txt
+cat: /etc/update-motd.d: Это каталог
+cat: /etc/update-notifier: Это каталог
+cat: /etc/UPower: Это каталог
+cat: /etc/usb_modeswitch.d: Это каталог
+cat: /etc/vim: Это каталог
+cat: /etc/wildmidi: Это каталог
+cat: /etc/wpa_supplicant: Это каталог
+cat: /etc/X11: Это каталог
+cat: /etc/xdg: Это каталог
+cat: /etc/xml: Это каталог
+
+
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ ll ~/
+итого 180
+drwxr-xr-x 25 student student 4096 янв 13 21:32 ./
+drwxr-xr-x  3 root    root    4096 дек 28 19:26 ../
+-rw-------  1 student student 4343 дек 28 19:27 .bash_history
+-rw-r--r--  1 student student  220 апр 22  2019 .bash_logout
+-rw-r--r--  1 student student 3771 апр 22  2019 .bashrc
+drwx------ 17 student student 4096 дек 20 12:22 .cache/
+drwx------ 18 student student 4096 янв 13 22:16 .config/
+drwxrwxr-x  4 student student 4096 апр 22  2019 .dbeaver4/
+drwxrwxr-x  3 student student 4096 апр 22  2019 .dbeaver-drivers/
+drwx------  3 student student 4096 дек 20 08:17 .dbus/
+drwxrwxr-x  4 student student 4096 апр 22  2019 .eclipse/
+-rw-r--r--  1 student student 8980 апр 22  2019 examples.desktop
+drwx------  2 student student 4096 апр 22  2019 .gconf/
+drwx------  3 student student 4096 янв 13 21:10 .gnupg/
+-rw-------  1 student student 4632 янв 13 21:10 .ICEauthority
+-rw-------  1 student student   28 янв 13 21:18 .lesshst
+drwxrwxr-x  2 student student 4096 янв 14 00:15 lessons/
+drwx------  3 student student 4096 апр 22  2019 .local/
+drwx------  5 student student 4096 апр 22  2019 .mozilla/
+drwx------  3 student student 4096 апр 22  2019 .mysql/
+-rw-------  1 student student   92 апр 22  2019 .mysql_history
+drwxrwxr-x  2 student student 4096 апр 22  2019 .nano/
+-rw-r--r--  1 student student  655 апр 22  2019 .profile
+-rw-rw-r--  1 student student   66 апр 22  2019 .selected_editor
+drwxrwxr-x  2 student student 4096 дек 25 22:45 .ssh/
+-rw-r--r--  1 student student    0 апр 22  2019 .sudo_as_admin_successful
+drwxrwxr-x  2 student student 4096 апр 22  2019 .swt/
+-rw-r-----  1 student student    5 янв 13 21:10 .vboxclient-clipboard.pid
+-rw-r-----  1 student student    5 янв 13 21:10 .vboxclient-display-svga-x11.pid
+-rw-r-----  1 student student    5 янв 13 21:10 .vboxclient-draganddrop.pid
+-rw-r-----  1 student student    5 янв 13 21:10 .vboxclient-seamless.pid
+-rw-------  1 student student   68 янв 13 21:10 .Xauthority
+-rw-------  1 student student  111 янв 13 21:10 .xsession-errors
+-rw-------  1 student student 1860 дек 28 19:27 .xsession-errors.old
+drwxr-xr-x  2 student student 4096 апр 22  2019 Видео/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Документы/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Загрузки/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Изображения/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Музыка/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Общедоступные/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Рабочий стол/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Шаблоны/
+
+
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ ll ~/ | cut -d ' ' -f 1
+итого
+drwxr-xr-x
+drwxr-xr-x
+-rw-------
+-rw-r--r--
+-rw-r--r--
+drwx------
+drwx------
+drwxrwxr-x
+drwxrwxr-x
+drwx------
+drwxrwxr-x
+-rw-r--r--
+drwx------
+drwx------
+-rw-------
+-rw-------
+drwxrwxr-x
+drwx------
+drwx------
+drwx------
+-rw-------
+drwxrwxr-x
+-rw-r--r--
+-rw-rw-r--
+drwxrwxr-x
+-rw-r--r--
+drwxrwxr-x
+-rw-r-----
+-rw-r-----
+-rw-r-----
+-rw-r-----
+-rw-------
+-rw-------
+-rw-------
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ ll ~/ | cut -d ' ' -f 1 | sort
+drwx------
+drwx------
+drwx------
+drwx------
+drwx------
+drwx------
+drwx------
+drwx------
+drwxrwxr-x
+drwxrwxr-x
+drwxrwxr-x
+drwxrwxr-x
+drwxrwxr-x
+drwxrwxr-x
+drwxrwxr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-------
+-rw-------
+-rw-------
+-rw-------
+-rw-------
+-rw-------
+-rw-------
+-rw-r-----
+-rw-r-----
+-rw-r-----
+-rw-r-----
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-rw-r--
+итого
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ ll ~/ | cut -d ' ' -f 1 | uniq
+итого
+drwxr-xr-x
+-rw-------
+-rw-r--r--
+drwx------
+drwxrwxr-x
+drwx------
+drwxrwxr-x
+-rw-r--r--
+drwx------
+-rw-------
+drwxrwxr-x
+drwx------
+-rw-------
+drwxrwxr-x
+-rw-r--r--
+-rw-rw-r--
+drwxrwxr-x
+-rw-r--r--
+drwxrwxr-x
+-rw-r-----
+-rw-------
+drwxr-xr-x
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ ll ~/ | cut -d ' ' -f 1 | sort | uniq
+drwx------
+drwxrwxr-x
+drwxr-xr-x
+-rw-------
+-rw-r-----
+-rw-r--r--
+-rw-rw-r--
+итого
+
+
+
+student@Ubuntu-MySQL-VirtualBox:~$ sudo nano /etc/ssh/sshd_config
+student@Ubuntu-MySQL-VirtualBox:~$ sudo systemctl status ssh
+● ssh.service - OpenBSD Secure Shell server
+   Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+   Active: active (running) since Вс 2022-01-16 18:37:28 MSK; 25min ago
+  Process: 1013 ExecReload=/bin/kill -HUP $MAINPID (code=exited, status=0/SUCCESS)
+  Process: 1010 ExecReload=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+  Process: 807 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+ Main PID: 825 (sshd)
+   CGroup: /system.slice/ssh.service
+           └─825 /usr/sbin/sshd -D
+
+янв 16 18:37:28 Ubuntu-MySQL-VirtualBox systemd[1]: Starting OpenBSD Secure Shell server...
+янв 16 18:37:28 Ubuntu-MySQL-VirtualBox sshd[825]: Server listening on 0.0.0.0 port 22.
+янв 16 18:37:28 Ubuntu-MySQL-VirtualBox sshd[825]: Server listening on :: port 22.
+янв 16 18:37:28 Ubuntu-MySQL-VirtualBox systemd[1]: Started OpenBSD Secure Shell server.
+янв 16 18:37:30 Ubuntu-MySQL-VirtualBox systemd[1]: Reloading OpenBSD Secure Shell server.
+янв 16 18:37:30 Ubuntu-MySQL-VirtualBox systemd[1]: Reloaded OpenBSD Secure Shell server.
+янв 16 18:37:30 Ubuntu-MySQL-VirtualBox sshd[825]: Received SIGHUP; restarting.
+янв 16 18:37:30 Ubuntu-MySQL-VirtualBox sshd[825]: Server listening on 0.0.0.0 port 22.
+янв 16 18:37:30 Ubuntu-MySQL-VirtualBox sshd[825]: Server listening on :: port 22.
+student@Ubuntu-MySQL-VirtualBox:~$ systemctl restart sshd
+student@Ubuntu-MySQL-VirtualBox:~$ sudo systemctl status ssh
+● ssh.service - OpenBSD Secure Shell server
+   Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+   Active: active (running) since Вс 2022-01-16 19:09:12 MSK; 11s ago
+  Process: 1013 ExecReload=/bin/kill -HUP $MAINPID (code=exited, status=0/SUCCESS)
+  Process: 1010 ExecReload=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+  Process: 3502 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+ Main PID: 3503 (sshd)
+   CGroup: /system.slice/ssh.service
+           └─3503 /usr/sbin/sshd -D
+
+янв 16 19:09:12 Ubuntu-MySQL-VirtualBox systemd[1]: Stopped OpenBSD Secure Shell server.
+янв 16 19:09:12 Ubuntu-MySQL-VirtualBox systemd[1]: Starting OpenBSD Secure Shell server...
+янв 16 19:09:12 Ubuntu-MySQL-VirtualBox sshd[3503]: Server listening on 0.0.0.0 port 22.
+янв 16 19:09:12 Ubuntu-MySQL-VirtualBox sshd[3503]: Server listening on :: port 22.
+янв 16 19:09:12 Ubuntu-MySQL-VirtualBox systemd[1]: Started OpenBSD Secure Shell server.
+
+student@Ubuntu-MySQL-VirtualBox:~$ sudo nano /etc/ssh/sshd_config
+student@Ubuntu-MySQL-VirtualBox:~$ systemctl reload sshd
+student@Ubuntu-MySQL-VirtualBox:~$ sudo systemctl status ssh
+● ssh.service - OpenBSD Secure Shell server
+   Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+   Active: active (running) since Вс 2022-01-16 19:09:12 MSK; 6min ago
+  Process: 3546 ExecReload=/bin/kill -HUP $MAINPID (code=exited, status=0/SUCCESS)
+  Process: 3545 ExecReload=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+  Process: 3502 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+ Main PID: 3503 (sshd)
+   CGroup: /system.slice/ssh.service
+           └─3503 /usr/sbin/sshd -D
+
+янв 16 19:09:12 Ubuntu-MySQL-VirtualBox systemd[1]: Stopped OpenBSD Secure Shell server.
+янв 16 19:09:12 Ubuntu-MySQL-VirtualBox systemd[1]: Starting OpenBSD Secure Shell server...
+янв 16 19:09:12 Ubuntu-MySQL-VirtualBox sshd[3503]: Server listening on 0.0.0.0 port 22.
+янв 16 19:09:12 Ubuntu-MySQL-VirtualBox sshd[3503]: Server listening on :: port 22.
+янв 16 19:09:12 Ubuntu-MySQL-VirtualBox systemd[1]: Started OpenBSD Secure Shell server.
+янв 16 19:15:33 Ubuntu-MySQL-VirtualBox systemd[1]: Reloading OpenBSD Secure Shell server.
+янв 16 19:15:33 Ubuntu-MySQL-VirtualBox sshd[3503]: Received SIGHUP; restarting.
+янв 16 19:15:34 Ubuntu-MySQL-VirtualBox systemd[1]: Reloaded OpenBSD Secure Shell server.
+янв 16 19:15:34 Ubuntu-MySQL-VirtualBox sshd[3503]: Server listening on 0.0.0.0 port 22.
+янв 16 19:15:34 Ubuntu-MySQL-VirtualBox sshd[3503]: Server listening on :: port 22.
+
+
+""" При рестарте процесс убился, потом запустился заново с новым process ID 
+(был PID 825, стал 3503)
+При релоаде PID не изменился 
+Я так понял - если я внес иземнения в файл конфигурации и не хочу перезапускать процесс - 
+можно воспользоваться релоад - изменения вступят в силу, а PID при этом останется прежним """
+
+student@Ubuntu-MySQL-VirtualBox:~$ cd lessons
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ ls
+etc_1.txt  etc_2.txt  Homework_text.txt  pyscr_errors.txt  py_scripts.txt  wc_help.txt
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ cat > Example_text
+В этой теме,
+и личной
+и мелкой,
+перепетой не раз
+и не пять,
+я кружил поэтической белкой 
+и хочу кружиться опять.
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ more Example_text
+В этой теме,
+и личной
+и мелкой,
+перепетой не раз
+и не пять,
+я кружил поэтической белкой 
+и хочу кружиться опять.
+
+""" При завершении командой ctrl+d процессу передается сигнал 15 """
+
+
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ mc
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ ps
+  PID TTY          TIME CMD
+ 4357 pts/11   00:00:00 bash
+ 4368 pts/11   00:00:00 ps
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ ps aux | grep firefox
+student   3679  1.4 13.5 3085760 276988 ?      Sl   19:38   0:21 /usr/lib/firefox/firefox
+student   3721  0.0  1.9 371384 39392 ?        Sl   19:38   0:00 /usr/lib/firefox/firefox -contentproc -parentBuildID 20210415204500 -prefsLen 1 -prefMapSize 234349 -appdir /usr/lib/firefox/browser 3679 true socket
+student   3763  0.0  6.3 2625816 130040 ?      Sl   19:38   0:01 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 150 -prefMapSize 234349 -parentBuildID 20210415204500 -appdir /usr/lib/firefox/browser 3679 true tab
+student   3801  0.0  4.5 2591500 93424 ?       Sl   19:38   0:00 /usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 245 -prefMapSize 234349 -parentBuildID 20210415204500 -appdir /usr/lib/firefox/browser 3679 true tab
+student   3828  0.0  5.3 2615744 109252 ?      Sl   19:38   0:01 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 5079 -prefMapSize 234349 -parentBuildID 20210415204500 -appdir /usr/lib/firefox/browser 3679 true tab
+student   3865  0.0  4.0 2589192 81700 ?       Sl   19:38   0:00 /usr/lib/firefox/firefox -contentproc -childID 4 -isForBrowser -prefsLen 5150 -prefMapSize 234349 -parentBuildID 20210415204500 -appdir /usr/lib/firefox/browser 3679 true tab
+student   4161  0.0  0.0  15472   924 pts/4    S+   20:03   0:00 grep --color=auto firefox
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ kill 3679
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ ps aux | grep firefox
+student   4166  0.0  0.0  15472  1088 pts/4    S+   20:03   0:00 grep --color=auto firefox
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ ps aux | grep firefox
+^[[6~student   4168 29.1 13.2 2984584 270668 ?      Sl   20:03   0:03 /usr/lib/firefox/firefox
+student   4209  0.3  1.9 371384 39676 ?        Sl   20:04   0:00 /usr/lib/firefox/firefox -contentproc -parentBuildID 20210415204500 -prefsLen 1 -prefMapSize 234868 -appdir /usr/lib/firefox/browser 4168 true socket
+student   4225  6.9  6.3 2626804 130352 ?      Sl   20:04   0:00 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 150 -prefMapSize 234868 -parentBuildID 20210415204500 -appdir /usr/lib/firefox/browser 4168 true tab
+student   4277  8.3  5.4 2614120 112216 ?      Sl   20:04   0:00 /usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 5079 -prefMapSize 234868 -parentBuildID 20210415204500 -appdir /usr/lib/firefox/browser 4168 true tab
+student   4301  3.8  4.0 2588428 82092 ?       Sl   20:04   0:00 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 5150 -prefMapSize 234868 -parentBuildID 20210415204500 -appdir /usr/lib/firefox/browser 4168 true tab
+student   4330  0.0  0.0  15472  1020 pts/4    S+   20:04   0:00 grep --color=auto firefox
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ kill -s 9 4168
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ ps aux | grep firefox
+student   4338  0.0  0.0  15472   976 pts/4    S+   20:05   0:00 grep --color=auto firefox
+
+
+
+
+
+
+
