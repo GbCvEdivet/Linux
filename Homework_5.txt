@@ -1,0 +1,255 @@
+
+
+
+1)
+
+
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ echo my name is > file1
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ echo Slim Shady >> file1
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ cat file1
+my name is
+Slim Shady
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ cp file1 file2
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ ll
+итого 16
+drwxrwxr-x 2 student student 4096 янв 19 21:17 ./
+drwxrwxr-x 3 student student 4096 янв 19 21:13 ../
+-rw-rw-r-- 1 student student   22 янв 19 21:15 file1
+-rw-rw-r-- 1 student student   22 янв 19 21:17 file2
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ ln -s file1 file3
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ ls -l
+итого 8
+-rw-rw-r-- 1 student student 22 янв 19 21:15 file1
+-rw-rw-r-- 1 student student 22 янв 19 21:17 file2
+lrwxrwxrwx 1 student student  5 янв 19 21:18 file3 -> file1
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ ln file1 file4
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ ls -li
+итого 12
+17979 -rw-rw-r-- 2 student student 22 янв 19 21:15 file1
+18021 -rw-rw-r-- 1 student student 22 янв 19 21:17 file2
+18026 lrwxrwxrwx 1 student student  5 янв 19 21:18 file3 -> file1
+17979 -rw-rw-r-- 2 student student 22 янв 19 21:15 file4
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ rm file1
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ ls -l
+итого 8
+-rw-rw-r-- 1 student student 22 янв 19 21:17 file2
+lrwxrwxrwx 1 student student  5 янв 19 21:18 file3 -> file1
+-rw-rw-r-- 1 student student 22 янв 19 21:15 file4
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ cat file2
+my name is
+Slim Shady
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ cat file3
+cat: file3: Нет такого файла или каталога
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ cat file4
+my name is
+Slim Shady
+
+
+2)
+
+
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ mv file2 Copy
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ rm file3
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ mv file4 Hardlink
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ ln -s Copy Softlink
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ tree
+.
+├── Copy
+├── Hardlink
+└── Softlink -> Copy
+
+0 directories, 3 files
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ mv Softlink ..
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ cd ..
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ tree
+.
+├── Lesson_5
+│   ├── Copy
+│   └── Hardlink
+└── Softlink -> Copy
+
+1 directory, 3 files
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ mv Lesson_5/Copy ~/lessons
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ tree
+.
+├── Copy
+├── Lesson_5
+│   └── Hardlink
+└── Softlink -> Copy
+
+
+
+3)
+
+
+
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ touch File1 
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ echo > File2
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ ls -l
+итого 4
+-rw-rw-r-- 1 student student 0 янв 19 22:51 File1
+-rw-rw-r-- 1 student student 1 янв 19 22:51 File2
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ chmod 664 File1
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ chmod g-rw,o-r File2
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ ls -l
+итого 4
+-rw-rw-r-- 1 student student 0 янв 19 22:51 File1
+-rw------- 1 student student 1 янв 19 22:51 File2
+
+
+4)
+
+
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ cd ~/
+student@Ubuntu-MySQL-VirtualBox:~$ sudo addgroup developer
+[sudo] пароль для student: 
+Добавляется группа «developer» (GID 1002) ...
+Готово.
+student@Ubuntu-MySQL-VirtualBox:~$ tail /etc/group
+pulse:x:124:
+pulse-access:x:125:
+rtkit:x:126:
+saned:x:127:
+student:x:1000:
+sambashare:x:128:student
+vboxsf:x:999:
+mysql:x:129:
+new_group:x:1001:
+developer:x:1002:
+student@Ubuntu-MySQL-VirtualBox:~$ sudo useradd -s /bin/bash -m -d /home/developers -G developer Vasili
+student@Ubuntu-MySQL-VirtualBox:~$ tail /etc/passwd
+kernoops:x:116:65534:Kernel Oops Tracking Daemon,,,:/:/bin/false
+pulse:x:117:124:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+rtkit:x:118:126:RealtimeKit,,,:/proc:/bin/false
+saned:x:119:127::/var/lib/saned:/bin/false
+usbmux:x:120:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+student:x:1000:1000:student,,,:/home/student:/bin/bash
+vboxadd:x:999:1::/var/run/vboxadd:/bin/false
+mysql:x:121:129:MySQL Server,,,:/nonexistent:/bin/false
+sshd:x:122:65534::/var/run/sshd:/usr/sbin/nologin
+Vasili:x:1001:1001::/home/developers:/bin/bash
+student@Ubuntu-MySQL-VirtualBox:~$ sudo useradd -s /bin/bash -d /home/developers -G developer Mariya
+student@Ubuntu-MySQL-VirtualBox:~$ tail /etc/passwd
+rtkit:x:118:126:RealtimeKit,,,:/proc:/bin/false
+saned:x:119:127::/var/lib/saned:/bin/false
+usbmux:x:120:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+student:x:1000:1000:student,,,:/home/student:/bin/bash
+vboxadd:x:999:1::/var/run/vboxadd:/bin/false
+mysql:x:121:129:MySQL Server,,,:/nonexistent:/bin/false
+sshd:x:122:65534::/var/run/sshd:/usr/sbin/nologin
+Vasili:x:1001:1001::/home/developers:/bin/bash
+mariya:x:1002:1003:,,,:/home/mariya:/bin/bash
+Mariya:x:1003:1004::/home/developers:/bin/bash
+student@Ubuntu-MySQL-VirtualBox:~$ sudo userdel mariya
+student@Ubuntu-MySQL-VirtualBox:~$ tail /etc/passwd
+pulse:x:117:124:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+rtkit:x:118:126:RealtimeKit,,,:/proc:/bin/false
+saned:x:119:127::/var/lib/saned:/bin/false
+usbmux:x:120:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+student:x:1000:1000:student,,,:/home/student:/bin/bash
+vboxadd:x:999:1::/var/run/vboxadd:/bin/false
+mysql:x:121:129:MySQL Server,,,:/nonexistent:/bin/false
+sshd:x:122:65534::/var/run/sshd:/usr/sbin/nologin
+Vasili:x:1001:1001::/home/developers:/bin/bash
+Mariya:x:1003:1004::/home/developers:/bin/bash
+student@Ubuntu-MySQL-VirtualBox:~$ sudo passwd Vasili
+Введите новый пароль UNIX: 
+Повторите ввод нового пароля UNIX: 
+passwd: пароль успешно обновлён
+student@Ubuntu-MySQL-VirtualBox:~$ sudopasswd Mariya
+sudopasswd: команда не найдена
+student@Ubuntu-MySQL-VirtualBox:~$ sudo passwd Mariya
+Введите новый пароль UNIX: 
+Повторите ввод нового пароля UNIX: 
+passwd: пароль успешно обновлён
+student@Ubuntu-MySQL-VirtualBox:~$ groups Vasili
+Vasili : Vasili developer
+student@Ubuntu-MySQL-VirtualBox:~$ groups Mariya
+Mariya : Mariya developer
+student@Ubuntu-MySQL-VirtualBox:~$ ll /home/developers
+итого 32
+drwxr-xr-x 2 Vasili Vasili 4096 янв 19 23:58 ./
+drwxr-xr-x 5 root   root   4096 янв 20 00:02 ../
+-rw-r--r-- 1 Vasili Vasili  220 сен  1  2015 .bash_logout
+-rw-r--r-- 1 Vasili Vasili 3771 сен  1  2015 .bashrc
+-rw-r--r-- 1 Vasili Vasili 8980 апр 20  2016 examples.desktop
+-rw-r--r-- 1 Vasili Vasili  655 май 16  2017 .profile
+student@Ubuntu-MySQL-VirtualBox:~$ sudo chown :developer /home/developers -R
+[sudo] пароль для student: 
+student@Ubuntu-MySQL-VirtualBox:~$ ll /home/developers
+итого 32
+drwxr-xr-x 2 Vasili developer 4096 янв 19 23:58 ./
+drwxr-xr-x 5 root   root      4096 янв 20 00:02 ../
+-rw-r--r-- 1 Vasili developer  220 сен  1  2015 .bash_logout
+-rw-r--r-- 1 Vasili developer 3771 сен  1  2015 .bashrc
+-rw-r--r-- 1 Vasili developer 8980 апр 20  2016 examples.desktop
+-rw-r--r-- 1 Vasili developer  655 май 16  2017 .profile
+student@Ubuntu-MySQL-VirtualBox:~$ sudo chmod 777 /home/developers -R
+student@Ubuntu-MySQL-VirtualBox:~$ ll /home/developers
+итого 32
+drwxrwxrwx 2 Vasili developer 4096 янв 19 23:58 ./
+drwxr-xr-x 5 root   root      4096 янв 20 00:02 ../
+-rwxrwxrwx 1 Vasili developer  220 сен  1  2015 .bash_logout*
+-rwxrwxrwx 1 Vasili developer 3771 сен  1  2015 .bashrc*
+-rwxrwxrwx 1 Vasili developer 8980 апр 20  2016 examples.desktop*
+-rwxrwxrwx 1 Vasili developer  655 май 16  2017 .profile*
+student@Ubuntu-MySQL-VirtualBox:~$ sudo chmod g+s /home/developers -R
+student@Ubuntu-MySQL-VirtualBox:~$ ll /home/developers
+итого 32
+drwxrwsrwx 2 Vasili developer 4096 янв 19 23:58 ./
+drwxr-xr-x 5 root   root      4096 янв 20 00:02 ../
+-rwxrwsrwx 1 Vasili developer  220 сен  1  2015 .bash_logout*
+-rwxrwsrwx 1 Vasili developer 3771 сен  1  2015 .bashrc*
+-rwxrwsrwx 1 Vasili developer 8980 апр 20  2016 examples.desktop*
+-rwxrwsrwx 1 Vasili developer  655 май 16  2017 .profile*
+
+
+5)
+
+
+student@Ubuntu-MySQL-VirtualBox:~$ mkdir /home/developers/share
+student@Ubuntu-MySQL-VirtualBox:~$ chmod u+s /home/developers/share
+student@Ubuntu-MySQL-VirtualBox:~$ ll /home/developers/share
+итого 8
+drwsrwxr-x 2 student developer 4096 янв 20 01:08 ./
+drwxrwsrwx 3 Vasili  developer 4096 янв 20 01:08 ../
+
+6)
+
+
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ mkdir Hidden
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5$ cd Hidden
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5/Hidden$ echo > .xxx
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5/Hidden$ touch .yyy
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5/Hidden$ cat > .zzz
+asdf
+fsd
+sdf
+^C
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5/Hidden$ ls
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5/Hidden$ ls -l
+итого 0
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5/Hidden$ ll
+итого 16
+drwxrwxr-x 2 student student 4096 янв 20 01:29 ./
+drwxrwxr-x 3 student student 4096 янв 20 01:28 ../
+-rw-rw-r-- 1 student student    1 янв 20 01:28 .xxx
+-rw-rw-r-- 1 student student    0 янв 20 01:28 .yyy
+-rw-rw-r-- 1 student student   13 янв 20 01:29 .zzz
+student@Ubuntu-MySQL-VirtualBox:~/lessons/Lesson_5/Hidden$ head .zzz
+asdf
+fsd
+sdf
+
+
+
+
+
+
+
+
+
+
+
+
+
