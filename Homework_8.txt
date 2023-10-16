@@ -1,0 +1,173 @@
+2)
+
+student@Ubuntu-MySQL-VirtualBox:~$ docker --help
+Программа 'docker' на данный момент не установлена. Вы можете установить её, выполнив:
+sudo apt install docker.io
+student@Ubuntu-MySQL-VirtualBox:~$ sudo apt install docker.io
+[sudo] пароль для student: 
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Будут установлены следующие дополнительные пакеты:
+  bridge-utils cgroupfs-mount containerd git git-man liberror-perl pigz runc
+  ubuntu-fan
+Предлагаемые пакеты:
+  aufs-tools btrfs-tools debootstrap docker-doc rinse zfs-fuse | zfsutils
+  git-daemon-run | git-daemon-sysvinit git-doc git-el git-email git-gui gitk
+  gitweb git-arch git-cvs git-mediawiki git-svn
+Следующие НОВЫЕ пакеты будут установлены:
+  bridge-utils cgroupfs-mount containerd docker.io git git-man liberror-perl
+  pigz runc ubuntu-fan
+Обновлено 0 пакетов, установлено 10 новых пакетов, для удаления отмечено 0 пакетов, и 0 пакетов не обновлено.
+Необходимо скачать 56,4 MB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 283 MB.
+Хотите продолжить? [Д/н] y
+Пол:1 http://ru.archive.ubuntu.com/ubuntu xenial/universe amd64 pigz amd64 2.3.1-2 [61,1 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu xenial/main amd64 bridge-utils amd64 1.5-9ubuntu1 [28,6 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu xenial/universe amd64 cgroupfs-mount all 1.2 [4 970 B]
+Пол:4 http://ru.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 runc amd64 1.0.0~rc7+git20190403.029124da-0ubuntu1~16.04.4 [1 890 kB]
+Пол:5 http://ru.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 containerd amd64 1.2.6-0ubuntu1~16.04.6 [19,9 MB]
+Пол:6 http://ru.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 docker.io amd64 18.09.7-0ubuntu1~16.04.7 [30,5 MB]
+Пол:7 http://ru.archive.ubuntu.com/ubuntu xenial/main amd64 liberror-perl all 0.17-1.2 [19,6 kB]
+Пол:8 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 git-man all 1:2.7.4-0ubuntu1.10 [737 kB]
+Пол:9 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 git amd64 1:2.7.4-0ubuntu1.10 [3 183 kB]
+Пол:10 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ubuntu-fan all 0.12.8~16.04.3 [35,1 kB]
+Получено 56,4 MB за 10с (5 615 kB/s)                                           
+Предварительная настройка пакетов ...
+Выбор ранее не выбранного пакета pigz.
+(Чтение базы данных … на данный момент установлено 222532 файла и каталога.)
+Подготовка к распаковке …/pigz_2.3.1-2_amd64.deb …
+Распаковывается pigz (2.3.1-2) …
+Выбор ранее не выбранного пакета bridge-utils.
+Подготовка к распаковке …/bridge-utils_1.5-9ubuntu1_amd64.deb …
+Распаковывается bridge-utils (1.5-9ubuntu1) …
+Выбор ранее не выбранного пакета cgroupfs-mount.
+Подготовка к распаковке …/cgroupfs-mount_1.2_all.deb …
+Распаковывается cgroupfs-mount (1.2) …
+Выбор ранее не выбранного пакета runc.
+Подготовка к распаковке …/runc_1.0.0~rc7+git20190403.029124da-0ubuntu1~16.04.4_amd64.deb …
+Распаковывается runc (1.0.0~rc7+git20190403.029124da-0ubuntu1~16.04.4) …
+Выбор ранее не выбранного пакета containerd.
+Подготовка к распаковке …/containerd_1.2.6-0ubuntu1~16.04.6_amd64.deb …
+Распаковывается containerd (1.2.6-0ubuntu1~16.04.6) …
+Выбор ранее не выбранного пакета docker.io.
+Подготовка к распаковке …/docker.io_18.09.7-0ubuntu1~16.04.7_amd64.deb …
+Распаковывается docker.io (18.09.7-0ubuntu1~16.04.7) …
+Выбор ранее не выбранного пакета liberror-perl.
+Подготовка к распаковке …/liberror-perl_0.17-1.2_all.deb …
+Распаковывается liberror-perl (0.17-1.2) …
+Выбор ранее не выбранного пакета git-man.
+Подготовка к распаковке …/git-man_1%3a2.7.4-0ubuntu1.10_all.deb …
+Распаковывается git-man (1:2.7.4-0ubuntu1.10) …
+Выбор ранее не выбранного пакета git.
+Подготовка к распаковке …/git_1%3a2.7.4-0ubuntu1.10_amd64.deb …
+Распаковывается git (1:2.7.4-0ubuntu1.10) …
+Выбор ранее не выбранного пакета ubuntu-fan.
+Подготовка к распаковке …/ubuntu-fan_0.12.8~16.04.3_all.deb …
+Распаковывается ubuntu-fan (0.12.8~16.04.3) …
+Обрабатываются триггеры для man-db (2.7.5-1) …
+Обрабатываются триггеры для ureadahead (0.100.0-19.1) …
+Обрабатываются триггеры для systemd (229-4ubuntu21.31) …
+Настраивается пакет pigz (2.3.1-2) …
+Настраивается пакет bridge-utils (1.5-9ubuntu1) …
+Настраивается пакет cgroupfs-mount (1.2) …
+Настраивается пакет runc (1.0.0~rc7+git20190403.029124da-0ubuntu1~16.04.4) …
+Настраивается пакет containerd (1.2.6-0ubuntu1~16.04.6) …
+Настраивается пакет docker.io (18.09.7-0ubuntu1~16.04.7) …
+Добавляется группа «docker» (GID 130) ...
+Готово.
+Настраивается пакет liberror-perl (0.17-1.2) …
+Настраивается пакет git-man (1:2.7.4-0ubuntu1.10) …
+Настраивается пакет git (1:2.7.4-0ubuntu1.10) …
+Настраивается пакет ubuntu-fan (0.12.8~16.04.3) …
+Обрабатываются триггеры для ureadahead (0.100.0-19.1) …
+Обрабатываются триггеры для systemd (229-4ubuntu21.31) …
+student@Ubuntu-MySQL-VirtualBox:~$ sudo apt install docker -y
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Следующие НОВЫЕ пакеты будут установлены:
+  docker
+Обновлено 0 пакетов, установлено 1 новых пакетов, для удаления отмечено 0 пакетов, и 0 пакетов не обновлено.
+Необходимо скачать 12,2 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 65,5 kB.
+Пол:1 http://ru.archive.ubuntu.com/ubuntu xenial/universe amd64 docker amd64 1.5-1 [12,2 kB]
+Получено 12,2 kB за 0с (176 kB/s)
+Выбор ранее не выбранного пакета docker.
+(Чтение базы данных … на данный момент установлено 223659 файлов и каталогов.)
+Подготовка к распаковке …/docker_1.5-1_amd64.deb …
+Распаковывается docker (1.5-1) …
+Обрабатываются триггеры для man-db (2.7.5-1) …
+Настраивается пакет docker (1.5-1) …
+student@Ubuntu-MySQL-VirtualBox:~$ docker ps
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.39/containers/json: dial unix /var/run/docker.sock: connect: permission denied
+student@Ubuntu-MySQL-VirtualBox:~$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+student@Ubuntu-MySQL-VirtualBox:~$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+
+
+
+
+3)
+
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ sudo docker run -it ubuntu
+[sudo] пароль для student: 
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+08c01a0ec47e: Pull complete 
+Digest: sha256:669e010b58baf5beb2836b253c1fd5768333f0d1dbcb834f7c07a4dc93f474be
+Status: Downloaded newer image for ubuntu:latest
+root@0766b7d8b526:/# exit
+exit
+
+4)
+
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ cat > Dockerfile
+FROM ubuntu:latest
+MAINTAINER student_666
+RUN apt-get update
+RUN apt-get install nginx -y
+RUN apt-get install php-fpm -y
+RUN mkdir /run/php-fpm
+VOLUME "/home/student/lessons"
+EXPOSE 80
+CMD /usr/sbin/nginx -g "daemon off;" ; php-fpm -D
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ docker build -t nginx-php .
+Sending build context to Docker daemon  7.168kB
+Step 1/9 : FROM ubuntu:latest
+ ---> 54c9d81cbb44
+Step 2/9 : MAINTAINER student_666
+ ---> Running in 1eb3179418fc
+Removing intermediate container 1eb3179418fc
+ ---> d9757f3e7e56
+Step 3/9 : RUN apt-get update
+............
+............
+Step 6/9 : RUN mkdir /run/php-fpm
+ ---> Running in 3ffc54c3b198
+Removing intermediate container 3ffc54c3b198
+ ---> 207d312c2ab0
+Step 7/9 : VOLUME "/home/student/lessons"
+ ---> Running in 0a7e16d347d7
+Removing intermediate container 0a7e16d347d7
+ ---> 3aa3d653f663
+Step 8/9 : EXPOSE 80
+ ---> Running in 015f65a94490
+Removing intermediate container 015f65a94490
+ ---> 4f1159d0cffe
+Step 9/9 : CMD /usr/sbin/nginx -g "daemon off;" ; php-fpm -D
+ ---> Running in ae8c59d34e14
+Removing intermediate container ae8c59d34e14
+ ---> 1a6c4d8d8029
+Successfully built 1a6c4d8d8029
+Successfully tagged nginx-php:latest
+
+student@Ubuntu-MySQL-VirtualBox:~/lessons$ docker images
+REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
+nginx-php                latest              1a6c4d8d8029        3 minutes ago       246MB
+ubuntu                   latest              54c9d81cbb44        12 hours ago        72.8MB
+docker/getting-started   latest              26d80cd96d69        2 months ago        28.5MB
+hello-world              latest              feb5d9fea6a5        4 months ago        13.3kB
+
+
