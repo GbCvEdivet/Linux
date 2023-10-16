@@ -1,0 +1,207 @@
+student@Ubuntu-MySQL-VirtualBox:~$ pwd
+/home/student
+student@Ubuntu-MySQL-VirtualBox:~$ mkdir sudents mentors
+student@Ubuntu-MySQL-VirtualBox:~$ tree
+.
+├── examples.desktop
+├── mentors
+├── sudents
+├── Видео
+├── Документы
+├── Загрузки
+├── Изображения
+├── Музыка
+├── Общедоступные
+├── Рабочий стол
+└── Шаблоны
+
+10 directories, 1 file
+student@Ubuntu-MySQL-VirtualBox:~$ cd students
+bash: cd: students: Нет такого файла или каталога
+student@Ubuntu-MySQL-VirtualBox:~$ cd /students
+bash: cd: /students: Нет такого файла или каталога
+student@Ubuntu-MySQL-VirtualBox:~$ mv sudents students
+student@Ubuntu-MySQL-VirtualBox:~$ ls
+examples.desktop  students  Документы  Изображения  Общедоступные  Шаблоны
+mentors           Видео     Загрузки   Музыка       Рабочий стол
+student@Ubuntu-MySQL-VirtualBox:~$ cd students
+student@Ubuntu-MySQL-VirtualBox:~/students$ > students_list.txt
+student@Ubuntu-MySQL-VirtualBox:~/students$ nano students_list.txt
+Используйте «fg» для возврата в nano
+
+[1]+  Остановлено  nano students_list.txt
+student@Ubuntu-MySQL-VirtualBox:~/students$ fg
+nano students_list.txt
+student@Ubuntu-MySQL-VirtualBox:~/students$ ls
+students_list.txt
+student@Ubuntu-MySQL-VirtualBox:~/students$ cd ..
+student@Ubuntu-MySQL-VirtualBox:~$ > mentors/mentors_list.txt
+student@Ubuntu-MySQL-VirtualBox:~$ nano mentors/mentors_list.txt
+student@Ubuntu-MySQL-VirtualBox:~$ ды
+ды: команда не найдена
+student@Ubuntu-MySQL-VirtualBox:~$ ls
+examples.desktop  students  Документы  Изображения  Общедоступные  Шаблоны
+mentors           Видео     Загрузки   Музыка       Рабочий стол
+student@Ubuntu-MySQL-VirtualBox:~$ tree
+.
+├── examples.desktop
+├── mentors
+│   └── mentors_list.txt
+├── students
+│   └── students_list.txt
+├── Видео
+├── Документы
+├── Загрузки
+├── Изображения
+├── Музыка
+├── Общедоступные
+├── Рабочий стол
+└── Шаблоны
+
+10 directories, 3 files
+student@Ubuntu-MySQL-VirtualBox:~$ mv mentors/mentors_list.txt students
+student@Ubuntu-MySQL-VirtualBox:~$ tree
+.
+├── examples.desktop
+├── mentors
+├── students
+│   ├── mentors_list.txt
+│   └── students_list.txt
+├── Видео
+├── Документы
+├── Загрузки
+├── Изображения
+├── Музыка
+├── Общедоступные
+├── Рабочий стол
+└── Шаблоны
+
+10 directories, 3 files
+student@Ubuntu-MySQL-VirtualBox:~$ rm mentors -r
+student@Ubuntu-MySQL-VirtualBox:~$ tree
+.
+├── examples.desktop
+├── students
+│   ├── mentors_list.txt
+│   └── students_list.txt
+├── Видео
+├── Документы
+├── Загрузки
+├── Изображения
+├── Музыка
+├── Общедоступные
+├── Рабочий стол
+└── Шаблоны
+
+9 directories, 3 files
+student@Ubuntu-MySQL-VirtualBox:~$ mv students students_and_mentors
+student@Ubuntu-MySQL-VirtualBox:~$ ls
+examples.desktop      Видео      Загрузки     Музыка         Рабочий стол
+students_and_mentors  Документы  Изображения  Общедоступные  Шаблоны
+student@Ubuntu-MySQL-VirtualBox:~$ rm sudents_and_mentors -r
+rm: невозможно удалить 'sudents_and_mentors': Нет такого файла или каталога
+student@Ubuntu-MySQL-VirtualBox:~$ rm students_and_mentors -r
+student@Ubuntu-MySQL-VirtualBox:~$ ls
+examples.desktop  Документы  Изображения  Общедоступные  Шаблоны
+Видео             Загрузки   Музыка       Рабочий стол
+
+
+
+
+
+
+Microsoft Windows [Version 10.0.19043.1415]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\edive>ssh student@192.168.1.57
+student@192.168.1.57's password:
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 4.15.0-142-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+UA Infra: Extended Security Maintenance (ESM) is not enabled.
+
+0 updates can be applied immediately.
+
+109 additional security updates can be applied with UA Infra: ESM
+Learn more about enabling UA Infra: ESM service for Ubuntu 16.04 at
+https://ubuntu.com/16-04
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Last login: Fri Dec 24 16:16:06 2021 from 192.168.1.214
+student@Ubuntu-MySQL-VirtualBox:~$ uname
+Linux
+student@Ubuntu-MySQL-VirtualBox:~$ hostnamectl
+   Static hostname: Ubuntu-MySQL-VirtualBox
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: 6917807b2dca43d681d86ffe5ca8e5d1
+           Boot ID: 69d04c3472834ea393fdc82a98d11472
+    Virtualization: oracle
+  Operating System: Ubuntu 16.04.7 LTS
+            Kernel: Linux 4.15.0-142-generic
+      Architecture: x86-64
+student@Ubuntu-MySQL-VirtualBox:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 16.04.7 LTS
+Release:        16.04
+Codename:       xenial
+student@Ubuntu-MySQL-VirtualBox:~$ hostname -I
+192.168.1.57
+student@Ubuntu-MySQL-VirtualBox:~$ systemctl status ssh
+● ssh.service - OpenBSD Secure Shell server
+   Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+   Active: active (running) since Пт 2021-12-24 15:54:01 MSK; 1 day 4h ago
+  Process: 3554 ExecReload=/bin/kill -HUP $MAINPID (code=exited, status=0/SUCCESS)
+  Process: 3549 ExecReload=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+  Process: 785 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+ Main PID: 818 (sshd)
+   CGroup: /system.slice/ssh.service
+           └─818 /usr/sbin/sshd -D
+
+дек 25 18:03:35 Ubuntu-MySQL-VirtualBox systemd[1]: Reloaded OpenBSD Secure Shell server.
+дек 25 18:03:35 Ubuntu-MySQL-VirtualBox sshd[818]: Server listening on 0.0.0.0 port 22.
+дек 25 18:03:35 Ubuntu-MySQL-VirtualBox sshd[818]: Server listening on :: port 22.
+дек 25 18:03:35 Ubuntu-MySQL-VirtualBox systemd[1]: Reloading OpenBSD Secure Shell server.
+дек 25 18:03:35 Ubuntu-MySQL-VirtualBox sshd[818]: Received SIGHUP; restarting.
+дек 25 18:03:35 Ubuntu-MySQL-VirtualBox systemd[1]: Reloaded OpenBSD Secure Shell server.
+дек 25 18:03:35 Ubuntu-MySQL-VirtualBox sshd[818]: Server listening on 0.0.0.0 port 22.
+дек 25 18:03:35 Ubuntu-MySQL-VirtualBox sshd[818]: Server listening on :: port 22.
+дек 25 20:35:55 Ubuntu-MySQL-VirtualBox sshd[4139]: Accepted password for student from 192.168.1.50 porдек 25 20:35:55 Ubuntu-MySQL-VirtualBox sshd[4139]: pam_unix(sshd:session): session opened for user stustudent@Ubuntu-MySQL-VirtualBox:~$ exit
+выход
+Connection to 192.168.1.57 closed.
+
+C:\Users\edive>
+
+
+
+
+Microsoft Windows [Version 10.0.19043.1415]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\edive>ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (C:\Users\edive/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in C:\Users\edive/.ssh/id_rsa.
+Your public key has been saved in C:\Users\edive/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:secxYNwSEpUCBKgqmaXdM/Oru0t596lP4Zm5d+pjO2Y edive@DESKTOP-P01A7LG
+The key's randomart image is:
++---[RSA 3072]----+
+| ..oo.ooo.       |
+|.     .o.o       |
+|.      .* .      |
+|. .    . =       |
+|.* .    S =      |
+|* . =.   + B     |
+|.   o=. . B      |
+|   . ... o oE .  |
+|    ==...o=*+*   |
++----[SHA256]-----+
